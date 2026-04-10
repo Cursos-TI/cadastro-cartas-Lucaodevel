@@ -19,6 +19,7 @@ int populacao2;
 float area2;
 float pib2;
 int pontosTuristicos2;
+float densidade2, pibPerCapita2;
 
 //Entrada de dados primeira carta.
     printf("=== Carta 1 ===\n");
