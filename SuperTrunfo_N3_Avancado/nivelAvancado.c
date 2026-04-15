@@ -28,7 +28,7 @@ float area2, pib2, densidade2, pibPerCapita2, superPoder2;
     scanf("%s", codigo1);
 
     printf("Digite o nome da cidade: ");
-    scanf(" %[^\n]s", cidade1);
+    scanf(" %[^\n]", cidade1);
 
     printf("Digite a População da cidade: ");
     scanf("%d", &populacao1);
@@ -79,7 +79,7 @@ float area2, pib2, densidade2, pibPerCapita2, superPoder2;
 
     //Calculo da segunda carta.
     if (area2 !=0){
-        densidade1 = (float) populacao2 / area2;
+        densidade2 = (float) populacao2 / area2;
     } else {
         densidade2 = 0;
     }
@@ -90,9 +90,8 @@ float area2, pib2, densidade2, pibPerCapita2, superPoder2;
     }
 
     //Calculo de super poder.(soma de tudo)
-    superPoder1 = populacao1 + area1 + pib1 + pontosTuristicos1 + pibPerCapita1 - densidade1;
-    superPoder2 = populacao2 + area2 + pib2 + pontosTuristicos2 + pibPerCapita2 - densidade2;
-
+    superPoder1 = (float)populacao1 + area1 + pib1 + (float)pontosTuristicos1 + pibPerCapita1 - densidade1;
+    superPoder2 = (float)populacao2 + area2 + pib2 + (float)pontosTuristicos2 + pibPerCapita2 - densidade2;
 
     //Menus interativos para o usuário escolher qual atributo quer comparar.
     printf("Escolha qual atributo deseja comparar: \n");
@@ -125,8 +124,8 @@ float area2, pib2, densidade2, pibPerCapita2, superPoder2;
     break;
 
     case 2: //Area
-    printf("\nÁrea: ");
-    printf("\nCarta 1 - %s: %f\n", cidade1, area1);
+    printf("Área: ");
+    printf("Carta 1 - %s: %f\n", cidade1, area1);
     printf("Carta 2 - %s: %f\n", cidade2, area2);
 
     if(area1 > area2){
@@ -141,9 +140,9 @@ float area2, pib2, densidade2, pibPerCapita2, superPoder2;
     break;
     
     case 3: //PIB
-    printf("\nPIB: ");
-    printf("\nCarta 1 - %s : %.2f\n", cidade1, pib1);
-    printf("Carta 2 - %s (%s): %.2f\n", cidade2, pib2);
+    printf("PIB: \n");
+    printf("Carta 1 - %s : %.2f\n", cidade1, pib1);
+    printf("Carta 2 - %s : %.2f\n", cidade2, pib2);
 
     if(pib1 > pib2){
     printf("Resultado: Carta 1 (%s) venceu!\n", cidade1);
@@ -174,8 +173,8 @@ float area2, pib2, densidade2, pibPerCapita2, superPoder2;
 
     case 5: //Super Poder
     printf("Super Poder:\n");
-    printf("Carta 1 - %s: %d\n", cidade1, superPoder1);
-    printf("Carta 2 - %s: %d\n", cidade2, superPoder2);
+    printf("Carta 1 - %s: %.2f\n", cidade1, superPoder1);
+    printf("Carta 2 - %s: %.2f\n", cidade2, superPoder2);
 
     if(superPoder1 > superPoder2){
     printf("Resultado: Carta 1 (%s) venceu!\n", cidade1);
